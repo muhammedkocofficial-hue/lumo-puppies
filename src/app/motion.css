@@ -1,0 +1,209 @@
+:root {
+  --ease-editorial: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --motion-fast: 180ms;
+  --motion-reveal: 680ms;
+  --motion-image: 960ms;
+}
+
+/* Content is visible in SSR. The observer opts in only below the first screen. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal="text"][data-motion="pending"] {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  [data-reveal="text"][data-motion="visible"] {
+    animation: editorial-text var(--motion-reveal) var(--ease-editorial) both;
+  }
+  [data-reveal="media"][data-motion="pending"] {
+    clip-path: inset(4% 0 4% 0);
+  }
+  [data-reveal="media"][data-motion="visible"] {
+    animation: editorial-mask var(--motion-image) var(--ease-editorial) both;
+  }
+  [data-reveal="media"][data-motion="visible"] img {
+    animation: editorial-scale var(--motion-image) var(--ease-editorial) both;
+  }
+  .campaign-stage {
+    animation: campaign-mask 900ms var(--ease-editorial) both;
+  }
+  .campaign-photograph img {
+    animation: campaign-settle 4200ms cubic-bezier(0.16, 0.55, 0.3, 1) both;
+  }
+  .campaign-image-caption > span:last-child {
+    animation: editorial-text 1100ms var(--ease-editorial) 160ms both;
+  }
+  .campaign-scroll > span:last-child {
+    animation: quiet-scroll-cue 1600ms ease-in-out 500ms 2;
+  }
+  .campaign-copy .line-window > * {
+    animation: campaign-line 700ms var(--ease-editorial) both;
+  }
+  .campaign-copy .line-window:nth-child(2) > * {
+    animation-delay: 100ms;
+  }
+  .mobile-menu[open] {
+    animation: menu-open 220ms var(--ease-editorial) both;
+  }
+  .mobile-menu[open] .menu-item {
+    animation: menu-item 390ms var(--ease-editorial) both;
+    animation-delay: calc(var(--menu-order) * 36ms + 40ms);
+  }
+  .mobile-menu[data-closing="true"] {
+    animation: menu-close 160ms ease-out both;
+  }
+  .mobile-menu[data-closing="true"] .menu-item {
+    animation: none;
+  }
+}
+
+@keyframes campaign-settle {
+  from { transform: scale(1.055); }
+  to { transform: scale(1); }
+}
+@keyframes quiet-scroll-cue {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+/* Optional native scroll enhancement; no listener, no scroll hijacking. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .campaign-photograph picture {
+      animation: campaign-departure linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}
+@keyframes campaign-departure {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(4%) scale(1.04); }
+}
+
+.text-link > span:last-child,
+.button-arrow,
+.invitation-arrow,
+.footer-top-link > span {
+  transition: transform 260ms var(--ease-editorial);
+}
+.button,
+.invitation-link {
+  transition:
+    color 200ms,
+    background-color 200ms,
+    transform var(--motion-fast);
+}
+.button:active {
+  transform: translateY(1px) scale(0.99);
+}
+.text-link::after {
+  transition: transform 300ms var(--ease-editorial);
+}
+@media (hover: hover) and (pointer: fine) {
+  .text-link:hover > span:last-child,
+  .button:hover .button-arrow,
+  .invitation-link:hover .invitation-arrow {
+    transform: translate(3px, -3px);
+  }
+  .text-link:hover::after {
+    transform: scaleX(1);
+  }
+  .footer-top-link:hover > span {
+    transform: translateY(-4px);
+  }
+  .puppy-portrait img,
+  .breed-portrait img {
+    transition: transform 900ms var(--ease-editorial);
+  }
+  .puppy-portrait a:hover img,
+  .breed-portrait:hover img {
+    transform: scale(1.025);
+  }
+}
+@keyframes editorial-text {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes editorial-mask {
+  from {
+    clip-path: inset(4% 0 4% 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+@keyframes editorial-scale {
+  from {
+    transform: scale(1.03);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes campaign-mask {
+  from {
+    clip-path: inset(0 1.8%);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+@keyframes campaign-line {
+  from {
+    transform: translateY(18%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes menu-open {
+  from {
+    opacity: 0.6;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes menu-close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes menu-item {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal],
+  [data-motion] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
