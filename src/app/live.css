@@ -82,3 +82,6 @@
 .navigation-controls:not(.navigation-controls-admin) .menu-lines i { width:20px;margin:0;background:#e2c69b; }
 .navigation-controls a:focus-visible,.navigation-controls button:focus-visible { outline:2px solid #a88043;outline-offset:4px; }
 }
+
+.story-copy p a,.faq-items p a,.breed-decision a { text-decoration:underline;text-underline-offset:4px; }
+.breed-decision .article-body { margin-block:0; }.breed-decision h3 { font-size:25px;line-height:1.25;margin:24px 0 14px; }.breed-decision nav { font-size:13px;line-height:2; }

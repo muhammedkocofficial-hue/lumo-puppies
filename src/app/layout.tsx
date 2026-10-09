@@ -38,6 +38,9 @@ export default function RootLayout({
       {
         "@type": "Organization",
         "@id": new URL("/#organization",site.url).href,
+        description: site.description,
+        alternateName: "LumoPuppies",
+        contactPoint: { "@type":"ContactPoint", telephone:site.contact.phone, contactType:"müşteri iletişimi", availableLanguage:"Turkish", hoursAvailable: { "@type":"OpeningHoursSpecification", dayOfWeek:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], opens:"09:00", closes:"21:00" } },
         telephone: site.contact.phone,
         email: site.contact.email,
         sameAs: [site.contact.instagram],
@@ -50,6 +53,9 @@ export default function RootLayout({
       },
       {
         "@type": "WebSite",
+        "@id": new URL("/#website",site.url).href,
+        alternateName: ["LumoPuppies", "lumopupies.com"],
+        publisher: { "@id":new URL("/#organization",site.url).href },
         name: site.name,
         inLanguage: "tr-TR",
         ...(site.url ? { url: site.url } : {}),

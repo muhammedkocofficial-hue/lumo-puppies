@@ -9,7 +9,7 @@ export function Hero() {
       <HeroVideo src="/media/hero/hero-film.mp4" poster="/media/hero/hero-film-poster.webp" />
 
       <div className="video-hero-copy">
-        <p className="eyebrow">{site.hero.eyebrow}</p>
+        <p className="eyebrow">{site.hero.eyebrow} · ATAŞEHİR, İSTANBUL</p>
         <h1 id="campaign-title">{editorial.hero.title}<br /><em>{editorial.hero.accent}</em></h1>
         <p>{editorial.hero.text}</p>
         <div className="video-hero-actions">

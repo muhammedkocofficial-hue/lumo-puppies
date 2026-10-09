@@ -1,3 +1,4 @@
+import { BreedDecisionGuide } from "@/components/content/BreedDecisionGuide";
 import { Icon } from "@/components/ui/Icon";
 import { notFound } from "next/navigation";
 import { publishedBreeds } from "@/data/breeds";
@@ -20,7 +21,7 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const b = publishedBreeds.find((b) => b.slug === slug);
-  return b ? pageMetadata(b.name, b.introduction, "/irklar/" + slug + "/") : {};
+  return b ? pageMetadata(b.name + " Özellikleri ve Yaşam Rehberi", b.introduction + " Lumo Puppies, Ataşehir İstanbul: güncel yavrular ve tanışma bilgileri.", "/irklar/" + slug + "/", b.media?.desktopSrc) : {};
 }
 export default async function BreedPage({
   params,
@@ -92,6 +93,7 @@ export default async function BreedPage({
           </div>
         </div>
       </section>
+      <BreedDecisionGuide slug={slug}/>
       {related.length > 0 && (
         <section className="shell section divider">
           <h2>{site.ui.relevantPuppies}</h2>
