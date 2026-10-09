@@ -3,10 +3,10 @@ import type { MediaAsset, Proof } from "@/types/content";
 // TODO: verified contact channels, legal identity, actual operating practices, photography, domain.
 export const site = {
   name: "Lumo Puppies",
-  title: "Lumo Puppies — Birlikte başlayan bir hayat",
+  title: "Lumo Puppies | Toy Poodle ve Pomeranian İstanbul",
   description:
-    "Birlikte yaşayacağınız hayatı düşünerek başlayın. Irkları tanıyın, bakım ihtiyaçlarını keşfedin ve Lumo Puppies’i yakından tanıyın.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "",
+    "İstanbul Ataşehir’de Lumo Puppies: Toy Poodle, Pomeranian ve Poodle türevlerini tanıyın. Güncel yavrular, bakım rehberleri ve tanışma için bize ulaşın.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://lumopupies.com",
   launchReady: true,
   logo: "/brand/lumo-official.webp" as string, // Original supplied by the owner; proportions preserved.
   contact: { whatsapp: "905511276214", phone: "+90 551 127 62 14", instagram: "https://www.instagram.com/lumopuppies/", messenger: "", email: "lumopuppies@gmail.com" },

@@ -16,7 +16,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = {
   ...pageMetadata(site.title, site.description),
   title: { default: site.title, template: "%s | Lumo Puppies" },
-  icons: { icon: "/brand/lumo-icon.png" },
+  metadataBase: new URL(site.url),
+  icons: { icon: [{ url: "/brand/lumo-icon.png", type: "image/png", sizes: "96x96" }], shortcut: "/brand/lumo-icon.png", apple: "/brand/lumo-icon.png" },
+  verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined,
   robots: { index: site.launchReady, follow: site.launchReady },
 };
 export const viewport: Viewport = {
@@ -35,6 +37,11 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "Organization",
+        "@id": new URL("/#organization",site.url).href,
+        telephone: site.contact.phone,
+        email: site.contact.email,
+        sameAs: [site.contact.instagram],
+        address: { "@type":"PostalAddress", addressLocality:"Ataşehir", addressRegion:"İstanbul", addressCountry:"TR" },
         name: site.name,
         ...(site.url ? { url: site.url } : {}),
         ...(site.logo && site.url
