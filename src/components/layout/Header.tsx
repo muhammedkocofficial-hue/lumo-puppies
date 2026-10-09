@@ -83,6 +83,9 @@ export function Header() {
         <Link className="brand" href="/" aria-label="Lumo Puppies — Ana sayfa">
           <Wordmark />
         </Link>
+        <nav className={"navigation-controls"+(pathname.startsWith("/admin")?" navigation-controls-admin":"")} aria-label="Menü ve iletişim">
+          <a className="dock-contact" href={"tel:"+site.contact.phone.replace(/\s/g,"")} aria-label="Lumo Puppies’i arayın"><Icon name="phone"/></a>
+          <a className="dock-contact" href={"mailto:"+site.contact.email} aria-label="E-posta gönderin"><Icon name="mail"/></a>
         <button
           ref={trigger}
           className="menu-trigger"
@@ -97,6 +100,9 @@ export function Header() {
             <i />
           </span>
         </button>
+          <a className="dock-contact" href={site.contact.instagram} aria-label="Instagram hesabımız" target="_blank" rel="noopener noreferrer"><Icon name="instagram"/></a>
+          <a className="dock-contact dock-whatsapp" href={"https://wa.me/"+site.contact.whatsapp} aria-label="WhatsApp’tan yazın" target="_blank" rel="noopener noreferrer"><Icon name="whatsapp"/></a>
+        </nav>
       </header>
       <dialog
         ref={dialog}

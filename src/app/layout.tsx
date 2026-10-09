@@ -10,7 +10,7 @@ import "./live.css";
 import { Motion } from "@/components/layout/Motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { MobileContact } from "@/components/layout/MobileContact";
+
 import { site } from "@/data/site";
 import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ export default function RootLayout({
         <Header />
         <main id="main">{children}</main>
         <Footer />
-        <MobileContact />
+
         <Motion />
         <script
           type="application/ld+json"
