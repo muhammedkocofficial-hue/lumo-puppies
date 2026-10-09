@@ -1,0 +1,1 @@
+export function ArticleBody({text}:{text:string}) { return <div className="article-body">{text.split(/\n\s*\n/).filter(Boolean).map((block,i)=>block.startsWith("## ")?<h2 key={i}>{block.slice(3)}</h2>:<p key={i}>{block}</p>)}</div>; }

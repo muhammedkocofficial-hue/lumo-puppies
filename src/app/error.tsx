@@ -1,0 +1,2 @@
+"use client";
+export default function ErrorPage({reset}:{reset:()=>void}){return <section className="shell section"><h1>Bir bağlantı sorunu yaşandı.</h1><p>Lütfen tekrar deneyin veya bize +90 551 127 62 14 numarasından ulaşın.</p><button className="button" onClick={reset}>Tekrar dene</button></section>;}

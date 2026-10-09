@@ -1,13 +1,15 @@
 "use client";
+import { Icon } from "@/components/ui/Icon";
+
 import { useState } from "react";
 import Link from "next/link";
 import { breeds } from "@/data/breeds";
-import { publishedPuppies } from "@/data/puppies";
+
 import { site } from "@/data/site";
 import type { Puppy } from "@/types/content";
 import { Media } from "@/components/ui/Media";
 const statuses = { available: "Tanışmaya açık", reserved: "Rezerve", home: "Yuvasını buldu" };
-export function PuppyList({ items = publishedPuppies, filters = false, limit }: { items?: Puppy[]; filters?: boolean; limit?: number }) {
+export function PuppyList({ items = [], filters = false, limit }: { items?: Puppy[]; filters?: boolean; limit?: number }) {
   const [breed, setBreed] = useState("");
   const [sex, setSex] = useState("");
   const [status, setStatus] = useState("");
@@ -17,7 +19,7 @@ export function PuppyList({ items = publishedPuppies, filters = false, limit }: 
   const matching = all.filter(p => (!breed || breedName(p) === breed) && (!sex || p.sex === sex) && (!status || p.status === status));
   const visible = limit ? matching.slice(0, limit) : matching;
   return <div className="catalogue">
-    {all.some(p => p.isExample) && <p className="demo-note">Temsili seçki · Yavru fotoğrafları ve profil bilgileri örnektir.</p>}
+
     {filters && <div className="catalogue-filters" aria-label="Yavru filtreleri">
       <label>Irk<select aria-label="Irk" value={breed} onChange={e => setBreed(e.target.value)}><option value="">Tüm ırklar</option>{names.map(n => <option key={n}>{n}</option>)}</select></label>
       <label>Cinsiyet<select aria-label="Cinsiyet" value={sex} onChange={e => setSex(e.target.value)}><option value="">Tümü</option><option>Dişi</option><option>Erkek</option></select></label>
@@ -33,9 +35,9 @@ export function PuppyList({ items = publishedPuppies, filters = false, limit }: 
         <div className="catalogue-name"><h3><Link href={"/yavrular/" + p.slug + "/"}>{p.name}</Link></h3><span>{p.sex}</span></div>
         <p className="catalogue-facts">{[p.colour, p.birthDate ? new Date(p.birthDate + "T12:00:00Z").toLocaleDateString("tr-TR", { month: "long", year: "numeric", timeZone: "UTC" }) + " doğumlu" : null].filter(Boolean).join(" · ")}</p>
         {p.personality && <p className="catalogue-traits">{p.personality.join(" · ")}</p>}
-        <Link className="catalogue-link" href={"/yavrular/" + p.slug + "/"}>Yakından tanıyın <span aria-hidden="true">↗</span></Link>
+        <Link className="catalogue-link" href={"/yavrular/" + p.slug + "/"}>Yakından tanıyın <span aria-hidden="true"><Icon className="arrow-diagonal"/></span></Link>
       </div>
     </article>)}</div>
-    {!visible.length && <div className="catalogue-empty"><h3>Bu seçkide henüz bir yavru yok.</h3><p>Diğer yavruları görmek için filtreleri değiştirebilirsiniz.</p>{(breed || sex || status) && <button className="button" onClick={() => { setBreed(""); setSex(""); setStatus(""); }}>Filtreleri temizle</button>}</div>}
+    {!visible.length && <div className="catalogue-empty"><h3>Yeni dostunuzu birlikte bulalım.</h3><p>Güncel yavrular ve tanışma için bize ulaşın.</p><Link className="text-link" href="/iletisim/">Lumo ile iletişim</Link>{(breed || sex || status) && <button className="button" onClick={() => { setBreed(""); setSex(""); setStatus(""); }}>Filtreleri temizle</button>}</div>}
   </div>;
 }

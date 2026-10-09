@@ -1,6 +1,8 @@
+import { Icon } from "@/components/ui/Icon";
 import { notFound } from "next/navigation";
 import { publishedBreeds } from "@/data/breeds";
-import { publishedPuppies } from "@/data/puppies";
+import { getContent } from "@/lib/cms-server";
+import { toPuppy } from "@/lib/puppy-adapter";
 import { site } from "@/data/site";
 import { Media } from "@/components/ui/Media";
 import { PuppyList } from "@/components/puppies/PuppyList";
@@ -10,6 +12,7 @@ export function generateStaticParams() {
   return publishedBreeds.map((b) => ({ slug: b.slug }));
 }
 export const dynamicParams = false;
+export const dynamic = "force-dynamic";
 export async function generateMetadata({
   params,
 }: {
@@ -27,11 +30,11 @@ export default async function BreedPage({
   const { slug } = await params;
   const breed = publishedBreeds.find((b) => b.slug === slug);
   if (!breed) notFound();
-  const related = publishedPuppies.filter((p) => p.breedSlug === slug);
+  const related = (await getContent("puppy")).filter(p => slug === "poodle-turevleri" ? ["Maltipoo", "Poodle melezi"].includes(p.payload.breed || "") : p.payload.breed === breed.name).map(toPuppy);
   return (
     <>
       <div className="shell breadcrumb">
-        <TextLink href="/irklar/">← {site.ui.backBreeds}</TextLink>
+        <TextLink href="/irklar/"><Icon className="arrow-left"/> {site.ui.backBreeds}</TextLink>
       </div>
       <section className="shell breed-detail-hero">
         <div>
@@ -42,7 +45,7 @@ export default async function BreedPage({
           <p className="lead">{breed.introduction}</p>
           <a className="text-link" href="#karakter">
             {site.ui.read}
-            <span aria-hidden="true">↓</span>
+            <span aria-hidden="true"><Icon className="arrow-down"/></span>
           </a>
         </div>
         {breed.media ? (
@@ -83,7 +86,7 @@ export default async function BreedPage({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {s.title} ↗
+                {s.title} <Icon className="arrow-diagonal"/>
               </a>
             ))}
           </div>

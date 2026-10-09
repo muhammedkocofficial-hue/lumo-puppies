@@ -1,15 +1,15 @@
 "use client";
+import { Icon } from "@/components/ui/Icon";
+
 import { useState } from "react";
 import { site } from "@/data/site";
 export function ContactForm() {
   const [opened, setOpened] = useState(false);
-  const demo = !site.contact.email;
   return (
     <form
       className="contact-form"
       onSubmit={(e) => {
         e.preventDefault();
-        if (demo) { setOpened(true); return; }
         const data = new FormData(e.currentTarget);
         const body = [
           data.get("message"),
@@ -27,7 +27,7 @@ export function ContactForm() {
         setOpened(true);
       }}
     >
-      <h2>{demo ? "Tanışmak için yazın." : site.contactPage.emailTitle}</h2>
+      <h2>{site.contactPage.emailTitle}</h2>
       <label htmlFor="contact-name">{site.contactPage.name}</label>
       <input
         id="contact-name"
@@ -53,13 +53,12 @@ export function ContactForm() {
         rows={5}
         maxLength={3000}
       />
-      <p className="fine-note">{demo ? "Temsili form. Bilgileriniz gönderilmez veya kaydedilmez." : site.contactPage.formNote}</p>
+      <p className="fine-note">{site.contactPage.formNote}</p>
       <button className="button" type="submit">
-        {demo ? "Örnek formu dene" : site.contactPage.submit}
-        <span aria-hidden="true">↗</span>
+        {site.contactPage.submit}
+        <span aria-hidden="true"><Icon className="arrow-diagonal"/></span>
       </button>
-      {opened && demo && <p role="status">Örnek form tamamlandı. Mesaj gönderilmedi; gerçek iletişim kanalı eklendiğinde bu alan kullanılabilir.</p>}
-      {opened && !demo && (
+      {opened && (
         <div role="status">
           <p>{site.contactPage.formSuccess}</p>
           <p>

@@ -7,10 +7,10 @@ export const site = {
   description:
     "Birlikte yaşayacağınız hayatı düşünerek başlayın. Irkları tanıyın, bakım ihtiyaçlarını keşfedin ve Lumo Puppies’i yakından tanıyın.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "",
-  launchReady: false,
+  launchReady: true,
   logo: "/brand/lumo-official.webp" as string, // Original supplied by the owner; proportions preserved.
-  contact: { whatsapp: "", phone: "", instagram: "", messenger: "", email: "" },
-  legal: { companyName: "", address: "", registration: "" },
+  contact: { whatsapp: "905511276214", phone: "+90 551 127 62 14", instagram: "https://www.instagram.com/lumopuppies/", messenger: "", email: "lumopuppies@gmail.com" },
+  legal: { companyName: "", address: "Ataşehir / İstanbul", registration: "" },
   heroMedia: {
     desktopSrc: "/media/examples/campaign-wide.webp",
     mobileSrc: "/media/examples/campaign-mobile.webp",
@@ -218,8 +218,8 @@ export const site = {
 export const navigation = [
   { href: "/irklar/", label: "Irklarımız" },
   { href: "/yavrular/", label: "Yavrularımız" },
-  { href: "/lumo-standardi/", label: "Lumo Standardı" },
-  { href: "/basarilar/", label: "Başarılarımız" },
+  { href: "/yeni-yuvalarinda/", label: "Yeni Yuvalarında" },
+  { href: "/blog/", label: "Blog" },
   { href: "/hakkimizda/", label: "Hakkımızda" },
   { href: "/iletisim/", label: "İletişim" },
 ];

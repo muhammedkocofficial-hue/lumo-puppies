@@ -1,3 +1,4 @@
+import { Icon } from "@/components/ui/Icon";
 import Link from "next/link";
 import { navigation, site } from "@/data/site";
 import { editorial } from "@/data/editorial";
@@ -10,7 +11,7 @@ export function Footer() {
           <p>{editorial.footer.note}</p>
           <a href="#top" className="footer-top-link">
             {site.footer.top}
-            <span aria-hidden="true">↑</span>
+            <span aria-hidden="true"><Icon className="arrow-up"/></span>
           </a>
         </div>
         <Link
@@ -32,7 +33,7 @@ export function Footer() {
             <nav className="footer-social" aria-label="İletişim kanalları">
               {contactChannels().map((c) => (
                 <a href={c.href} key={c.label}>
-                  {c.label} ↗
+                  <Icon name={c.label==="WhatsApp"?"whatsapp":c.label==="Telefon"?"phone":c.label==="Instagram"?"instagram":"mail"}/><span><small>{c.label}</small>{c.label==="Telefon"?site.contact.phone:c.label==="E-posta"?site.contact.email:c.label==="Instagram"?"@lumopuppies":"Mesaj gönderin"}</span>
                 </a>
               ))}
             </nav>
@@ -43,6 +44,7 @@ export function Footer() {
             © {new Date().getFullYear()} {site.footer.copyright}
           </span>
           <p>{site.footer.note}</p>
+          <a className="ddo-credit" href="https://denizdigitaloperate.com" target="_blank" rel="noopener noreferrer"><span>Tasarım & geliştirme</span><strong>DENİZ DİGİTAL OPERATE</strong><Icon className="arrow-diagonal"/></a>
         </div>
       </div>
     </footer>

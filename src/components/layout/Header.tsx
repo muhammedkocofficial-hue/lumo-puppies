@@ -1,4 +1,6 @@
 "use client";
+import { Icon } from "@/components/ui/Icon";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, type CSSProperties } from "react";
@@ -137,7 +139,7 @@ export function Header() {
                 <span className="menu-index">0{i + 1}</span>
                 <span className="menu-item-label">{item.label}</span>
                 <span className="menu-arrow" aria-hidden="true">
-                  ↗
+                  <Icon className="arrow-diagonal"/>
                 </span>
               </Link>
             ))}
@@ -149,7 +151,7 @@ export function Header() {
                 <p className="eyebrow">{editorial.navigation.social}</p>
                 {contactChannels().map((c) => (
                   <a key={c.label} href={c.href} onClick={finish}>
-                    {c.label} ↗
+                    {c.label} <Icon className="arrow-diagonal"/>
                   </a>
                 ))}
               </div>

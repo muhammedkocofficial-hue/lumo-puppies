@@ -1,3 +1,4 @@
+import { Icon } from "@/components/ui/Icon";
 import Link from "next/link";
 import { site } from "@/data/site";
 export default function NotFound() {
@@ -8,7 +9,7 @@ export default function NotFound() {
       <p>{site.ui.notFoundText}</p>
       <Link className="button" href="/">
         {site.ui.notFoundAction}
-        <span aria-hidden="true">↗</span>
+        <span aria-hidden="true"><Icon className="arrow-diagonal"/></span>
       </Link>
     </section>
   );

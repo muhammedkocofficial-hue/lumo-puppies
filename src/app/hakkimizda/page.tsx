@@ -1,40 +1,9 @@
-import { site } from "@/data/site";
-
-import { People, FamilyStories } from "@/components/home/Stories";
-import {
-  PageIntro,
-  ContactInvitation,
-  TextLink,
-} from "@/components/ui/Editorial";
+import { Standard } from "@/components/home/Standard";
+import { Awards } from "@/components/content/Awards";
+import { Process } from "@/components/home/Process";
+import { ContactInvitation,PageIntro } from "@/components/ui/Editorial";
 import { Media } from "@/components/ui/Media";
 import { pageMetadata } from "@/lib/seo";
-export const metadata = pageMetadata(
-  "Hakkımızda",
-  site.about.text,
-  "/hakkimizda/",
-);
-export default function AboutPage() {
-  return (
-    <>
-      <PageIntro
-        eyebrow={site.about.eyebrow}
-        title={site.about.title}
-        text={site.about.text}
-      />
-      <section className="shell about-body">
-        <Media asset={site.aboutMedia} />
-        <div>
-          <h2>{site.intro.title}</h2>
-          <p>{site.intro.text}</p>
-          <TextLink href="/lumo-standardi/">{site.standard.link}</TextLink>
-        </div>
-      </section>
-      <section className="shell section divider">
-        <h2>{site.about.peopleTitle}</h2>
-        <People />
-      </section>
-      <FamilyStories />
-      <ContactInvitation />
-    </>
-  );
-}
+export const metadata=pageMetadata("Hakkımızda","Lumo Puppies’in hikâyesi, yaklaşımı, bakım standartları ve başarıları. Ataşehir, İstanbul.","/hakkimizda/");
+export const dynamic="force-dynamic";
+export default function Page(){return <><PageIntro eyebrow="LUMO PUPPIES" title="Birlikte başlayan bir hayat." text="Küçük bir dostun hayatınızdaki yeri, kapladığı alandan çok daha büyük."/><section className="shell about-body"><Media asset={{desktopSrc:"/media/editorial/story.webp",alt:"Yeni bir dostla tanışma",aspectRatio:"4 / 5"}}/><div><h2>Önce tanışmak.<br/>Sonra, birlikte düşünmek.</h2><p>Lumo Puppies, Pomeranian, Toy Poodle ve Poodle türevleriyle kurulacak yeni bağlara odaklanır. Bizim için güzel bir başlangıç, yalnızca bir fotoğrafa duyulan yakınlık değil; yavrunun ihtiyaçlarıyla ailenin günlük hayatının bir arada düşünülmesidir.</p><p>Ataşehir / İstanbul’da başlayan iletişimimizde sorulara yer açıyoruz. Nasıl bir yaşamınız var? Bakıma ne kadar zaman ayırabilirsiniz? Evinizde yeni bir dost için neler değişecek? Her tanışmanın kendine özgü bir cevabı var.</p><p>Yaklaşımımız açık iletişim, bireysel ihtiyaçları anlama ve uzun vadeli sorumluluk üzerine kurulu. Bir dost edinmenin aceleye getirilmemesi gerektiğine inanıyoruz.</p></div></section><section id="lumo-standardi" className="shell section standard-intro"><p className="eyebrow">YAKLAŞIMIMIZ</p><h2>Lumo Standartları</h2><p>Sağlık bilgilerini kaynağıyla konuşmak, günlük bakıma zaman ayırmak, her yavruyu kendi karakteriyle tanımak ve soruları açıkça ele almak.</p></section><Standard full/><Awards full/><Process/><ContactInvitation/></>;}

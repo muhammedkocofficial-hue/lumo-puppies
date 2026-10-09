@@ -6,6 +6,7 @@ import "./globals.css";
 import "./motion.css";
 import "./brand.css";
 import "./catalogue.css";
+import "./live.css";
 import { Motion } from "@/components/layout/Motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";

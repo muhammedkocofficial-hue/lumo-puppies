@@ -9,7 +9,7 @@ export function Standard({ full = false }: { full?: boolean }) {
         <p className="eyebrow">{site.standard.eyebrow}</p>
         {!full && <h2 data-reveal="text">{site.standard.title}</h2>}
         <p className="standard-introduction">{site.standard.text}</p>
-        {!full && <TextLink href="/lumo-standardi/">{site.standard.link}</TextLink>}
+        {!full && <TextLink href="/hakkimizda/#lumo-standardi">{site.standard.link}</TextLink>}
       </header>
       <div className="principles">
         {site.principles.map((p, i) => <article className="principle" key={p.title}>

@@ -1,59 +1,8 @@
-import { demoContent } from "@/data/demo";
 import { site } from "@/data/site";
-import { contactChannels } from "@/lib/contact";
-import { PageIntro, TextLink } from "@/components/ui/Editorial";
+import { PageIntro } from "@/components/ui/Editorial";
+import { Icon } from "@/components/ui/Icon";
+import { ContactActions } from "@/components/ui/ContactActions";
 import { ContactForm } from "@/components/ui/ContactForm";
-import { Faq } from "@/components/ui/Faq";
 import { pageMetadata } from "@/lib/seo";
-export const metadata = pageMetadata(
-  "İletişim",
-  site.contactPage.text,
-  "/iletisim/",
-);
-export default function ContactPage() {
-  const channels = contactChannels();
-  return (
-    <div data-contact-section>
-      <PageIntro
-        eyebrow={site.contactPage.eyebrow}
-        title={site.contactPage.title}
-        text={site.contactPage.text}
-      />
-      <section className="shell contact-content">
-        {channels.length ? (
-          <div>
-            <p className="eyebrow">{site.contactPage.channelsTitle}</p>
-            <div className="contact-channels">
-              {channels.map((c) => (
-                <a
-                  key={c.label}
-                  href={c.href}
-                  target={c.href.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    c.href.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                >
-                  {c.label}
-                  <span aria-hidden="true">↗</span>
-                </a>
-              ))}
-            </div>
-            {site.legal.companyName && <p>{site.legal.companyName}</p>}
-            {site.legal.address && <address>{site.legal.address}</address>}
-          </div>
-        ) : (
-          <div className="contact-pending">
-            <p className="eyebrow">BİRLİKTE PLANLAYALIM</p><h2>Bir merhaba kadar yakın.</h2>
-            <p className="demo-note">Temsili iletişim bilgileri · Aktif iletişim kanalı değildir.</p>
-            <dl className="demo-contact-list"><div><dt>Telefon & WhatsApp</dt><dd>{demoContent.contact.phone}</dd></div><div><dt>E-posta</dt><dd>{demoContent.contact.email}</dd></div><div><dt>Adres</dt><dd>{demoContent.contact.address}</dd></div><div><dt>Görüşme saatleri</dt><dd>{demoContent.contact.hours}</dd></div></dl><p>{demoContent.contact.visits}</p>
-            <TextLink href="/yavrular/">Yavruları keşfedin</TextLink>
-          </div>
-        )}
-        <ContactForm />
-      </section>
-      <Faq />
-    </div>
-  );
-}
+export const metadata=pageMetadata("İletişim","Lumo Puppies ile tanışın. Telefon, WhatsApp ve Instagram üzerinden bize ulaşın. Ataşehir, İstanbul. Her gün 09.00–21.00.","/iletisim/");
+export default function Page(){return <div data-contact-section><PageIntro eyebrow="BİR MERHABA İLE" title="Konuşacak çok güzel şeyler var." text="Yeni dostunuz, merak ettikleriniz ve birlikte kuracağınız hayat. Sizi dinleyelim."/><section className="shell contact-live"><div className="contact-dark"><p className="eyebrow">LUMO PUPPIES</p><a className="contact-number" href="tel:+905511276214">{site.contact.phone}</a><ContactActions/><div className="contact-details"><a href={"mailto:"+site.contact.email}><Icon name="mail"/>{site.contact.email}</a><a href={site.contact.instagram} target="_blank" rel="noopener noreferrer"><Icon name="instagram"/>@lumopuppies</a><p><Icon name="pin"/>Ataşehir / İstanbul</p><p><Icon name="clock"/>Görüşme saatleri · 09.00–21.00</p></div></div><ContactForm/></section></div>;}

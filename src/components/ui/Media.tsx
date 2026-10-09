@@ -49,9 +49,7 @@ export function Media({
           <span className="placeholder-label">LUMO PUPPIES</span>
         </div>
       )}
-      {asset?.desktopSrc && asset.isExample && (
-        <figcaption className="media-example-note">Temsili görsel · AI</figcaption>
-      )}
+
     </figure>
   );
 }

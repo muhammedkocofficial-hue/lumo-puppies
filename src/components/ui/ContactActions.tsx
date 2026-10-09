@@ -1,0 +1,3 @@
+import { site } from "@/data/site";
+import { Icon } from "./Icon";
+export function ContactActions({name}:{name?:string}) { const message=name?`Merhaba, ${name} hakkında bilgi almak istiyorum.`:"Merhaba, yavrularınız hakkında bilgi almak istiyorum.";return <div className="contact-actions"><a className="button" href={`tel:${site.contact.phone.replace(/\s/g,"")}`}><Icon name="phone"/>Hemen arayın</a><a className="button whatsapp-action" href={`https://wa.me/${site.contact.whatsapp.replace(/\D/g,"")}?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer"><Icon name="whatsapp"/>WhatsApp’tan yazın</a></div>; }

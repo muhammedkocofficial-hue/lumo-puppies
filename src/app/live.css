@@ -1,0 +1,69 @@
+.line-icon { display:inline-block; flex-shrink:0; vertical-align:middle; }
+.arrow-diagonal { transform:rotate(-45deg); }.arrow-left { transform:rotate(180deg); }.arrow-up { transform:rotate(-90deg); }.arrow-down { transform:rotate(90deg); }
+.media,.catalogue-photo,.story-photo,.video-hero-stage,.gallery-rail,.breed-portrait { border-radius:22px; overflow:hidden; }
+.catalogue-card { border-radius:24px; overflow:hidden; }.catalogue-photo { border-radius:0; }
+.text-link { gap:18px; }.text-link .line-icon { width:22px;height:22px; }
+.invitation-arrow .line-icon { width:40px;height:40px; }
+.floating-contact { position:fixed; bottom:max(18px,env(safe-area-inset-bottom)); left:50%; transform:translateX(-50%); z-index:40; display:flex;gap:12px;padding:9px;border:1px solid #dfcba9;background:#fcfaf6ed;backdrop-filter:blur(14px);border-radius:60px;box-shadow:0 6px 30px #30251c20; }
+.floating-contact a { width:48px;height:48px;display:grid;place-items:center;border:1px solid #cbb38e;border-radius:50%;background:#fffaf2;color:#634821; }
+.floating-contact a:nth-child(2) { background:#254f43;color:#fff;border-color:#254f43; }
+.floating-contact a:hover { filter:brightness(.94); }
+.contact-actions { display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px; }
+.contact-actions .button { min-height:56px;display:flex;justify-content:center;gap:12px;white-space:nowrap;font-size:14px;padding:12px 15px; }
+.puppy-profile-copy .contact-actions,.contact-dark .contact-actions { grid-template-columns:1fr; }
+.whatsapp-action { background:#254f43;color:#fff;border-color:#254f43; }
+.story-editorial { display:grid;gap:32px;padding-block:55px;align-items:center; }
+.story-photo .media { aspect-ratio:4/4.2; }.story-copy h2 { font-size:clamp(42px,5vw,72px);margin:20px 0; }.story-copy p:not(.eyebrow) { color:var(--muted);font-size:15px;line-height:1.9;margin-bottom:18px; }.story-copy .text-link { margin-top:10px; }
+.visual-standard { padding-block:40px!important; }.visual-standard .standard-heading h2 { font-size:clamp(36px,4vw,52px); }.visual-standard .standard-introduction { font-size:14px;margin-top:16px; }
+.visual-standard .principles { grid-template-columns:1fr 1fr!important;gap:25px 16px;margin-top:25px; }.visual-standard .principle-visual { margin:0 0 14px!important; }.visual-standard .principle-visual .media { aspect-ratio:4/3; }.visual-standard .principle-copy h3 { font-size:24px;letter-spacing:-.5px; }.visual-standard .principle-copy>p:last-child { font-size:12px;line-height:1.8; }.visual-standard .principle-copy .eyebrow { font-size:10px;margin-bottom:10px; }
+.standard-intro { padding-bottom:0; }.standard-intro>p:last-child { max-width:720px;margin-top:20px;color:var(--muted); }.standard-full .principles { max-width:none; }
+.family-gallery header { display:grid;gap:24px;margin-bottom:30px; }.family-gallery header>p { max-width:380px;font-size:15px;color:var(--muted); }.family-gallery h1,.family-gallery h2,.journal-preview h2,.live-breeds h2,.real-awards h2 { font-size:clamp(38px,4.5vw,62px);margin-top:15px; }
+.family-gallery-grid,.real-awards-grid,.content-grid { display:grid;grid-template-columns:1fr;gap:32px;margin-top:32px; }
+.family-gallery h3,.real-awards h3,.content-grid h3 { font-size:29px;margin-block:18px 14px; }
+.family-gallery-grid p,.real-awards-grid p,.content-grid article>a>p:not(.eyebrow) { color:var(--muted);font-size:14px;line-height:1.8; }
+.real-awards-grid .eyebrow,.content-grid .eyebrow { margin-top:22px; }.family-invitation { border-block:1px solid var(--line);padding:25px 0; }.family-gallery>.text-link,.real-awards>.text-link,.journal-preview>.text-link { margin-top:28px; }
+.live-breeds .breed-list { display:grid;gap:32px; }.live-breeds .breed-chapter { display:block;padding:0;margin-top:30px;border:0; }.live-breeds .breed-chapter-top { display:none; }.live-breeds .breed-portrait { margin:0; }.live-breeds .breed-portrait .media { aspect-ratio:4/4.2; }.live-breeds .breed-chapter-copy { display:block; }.live-breeds .breed-chapter-copy h3 { font-size:38px;margin:20px 0; }.live-breeds .breed-chapter-copy p { font-size:14px; }
+.content-grid .text-link { margin-top:18px; }.blog-article { max-width:1050px;padding-block:35px 60px; }.blog-article header { max-width:850px;margin:35px auto; }.blog-article h1 { font-size:clamp(39px,5vw,68px);margin-block:18px; }.blog-article .lead { font-size:17px; }.reading-time { margin-top:20px;color:var(--muted);font-size:12px; }
+.article-body { max-width:740px;margin:38px auto; }.article-body p { font-size:16px;line-height:1.95;margin-bottom:24px;white-space:pre-line; }.article-body h2 { font-size:32px;line-height:1.2;margin:40px 0 20px; }.article-sources { max-width:740px;margin:30px auto;border-top:1px solid var(--line);padding-top:22px;font-size:13px; }.article-sources a { display:inline-block;margin:12px 20px 0 0;text-decoration:underline; }
+.contact-live { display:grid;gap:35px;padding-bottom:70px; }.contact-dark { background:#30251c;color:#fff4e3;border-radius:26px;padding:28px 22px; }.contact-dark .eyebrow { color:#dfc397; }.contact-number { display:block;font:clamp(28px,4vw,45px)/1.3 var(--serif);margin-top:24px;letter-spacing:-.7px;white-space:nowrap; }.contact-details { display:grid;gap:22px;margin-top:35px; }.contact-details>a,.contact-details>p { display:flex;gap:14px;align-items:center;font-size:14px;overflow-wrap:anywhere; }.contact-dark .button { background:#e2c69b;color:#30251c;border:0; }.contact-dark .whatsapp-action { background:#395f50;color:white; }
+.ddo-credit { display:flex;align-items:center;gap:12px;font-size:10px; }.ddo-credit strong { font:700 27px/1 var(--sans);letter-spacing:-2px; }.footer { padding-bottom:110px; }
+.award-editorial>article { display:grid;gap:28px;margin-top:22px;align-items:center; }.award-photo-pair { display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start; }.award-photo-pair .media:last-child { margin-top:30px; }.award-editorial-copy h2 { font-size:clamp(36px,4.5vw,60px);margin:18px 0; }.award-editorial-copy>p:not(.eyebrow) { color:var(--muted);font-size:15px;line-height:1.8; }.award-editorial-copy .text-link { margin-top:20px; }.award-full .article-body { margin-top:24px; }.award-full .article-body p { font-size:15px; }
+@media(min-width:800px){.award-editorial>article { grid-template-columns:1.15fr 1fr;gap:6%; }.award-photo-pair { gap:18px; }.award-photo-pair .media:last-child { margin-top:50px; }}
+.admin-area { padding-block:45px 100px; }.admin-area h1 { font-size:clamp(32px,4vw,54px); }.admin-top { display:flex;justify-content:space-between;gap:20px;align-items:center; }.admin-tabs { display:flex;gap:8px;overflow:auto;margin:30px 0 15px;padding-bottom:10px; }.admin-tabs button { white-space:nowrap;min-height:44px;padding:10px 18px;border:1px solid var(--line);border-radius:24px; }.admin-tabs [aria-pressed=true] { background:var(--ink);color:var(--paper); }.admin-layout { display:grid;gap:28px; }.admin-layout aside { display:flex;flex-direction:column;gap:12px; }.admin-record { text-align:left;display:flex;align-items:center;gap:12px;border:1px solid var(--line);padding:12px;border-radius:12px; }.admin-record[aria-pressed=true] { border-color:var(--gold);background:var(--wash); }.admin-record img { width:54px;height:64px;object-fit:cover;border-radius:8px; }.admin-record small { display:block;color:var(--muted); }.admin-editor fieldset { min-width:0;border:1px solid var(--line);border-radius:18px;padding:22px; }.admin-editor legend { font-size:13px;padding:0 8px; }.admin-editor label,.admin-login label { display:grid;gap:8px;font-size:13px;margin-bottom:20px; }.admin-editor input:not([type=checkbox]),.admin-editor select,.admin-editor textarea,.admin-login input { width:100%;min-width:0;border:1px solid var(--line);background:white;border-radius:8px;padding:12px;font:inherit;min-height:46px; }.admin-two { display:grid;gap:0 18px; }.admin-images { display:grid;gap:20px; }.admin-images img { width:100%;max-height:220px;object-fit:cover;border-radius:10px; }.admin-images button { border:1px solid var(--line);padding:8px;margin:6px; }.admin-checkbox { display:flex!important;align-items:center;gap:10px; }.admin-checkbox input { width:20px;height:20px; }.admin-actions { display:flex;gap:24px;align-items:center;margin-top:25px; }.admin-message { min-height:26px;margin-bottom:20px; }.admin-login { max-width:480px; }.admin-login form { margin-top:30px; }.admin-editor button:disabled { opacity:.5; }.admin-editor fieldset>p { font-size:12px;color:var(--muted); }
+@media(min-width:700px){.contact-actions { grid-template-columns:1fr 1fr; }.story-editorial { grid-template-columns:1fr 1fr;gap:7%;padding-block:80px; }.family-gallery header { grid-template-columns:1fr 1fr;align-items:end; }.content-grid,.family-gallery-grid,.real-awards-grid { grid-template-columns:repeat(3,minmax(0,1fr));gap:25px; }.live-breeds .breed-list { grid-template-columns:repeat(3,minmax(0,1fr)); }.admin-two,.admin-images { grid-template-columns:1fr 1fr; }.admin-layout { grid-template-columns:240px 1fr; }.floating-contact { display:none; }.footer { padding-bottom:30px; }}
+@media(min-width:1000px){.visual-standard .principles { grid-template-columns:repeat(4,1fr)!important;gap:28px; }.contact-live { grid-template-columns:1.1fr 1fr;gap:55px; }.contact-dark { padding:40px; }.admin-layout { grid-template-columns:280px 1fr; }}
+@media(min-width:1400px){.puppy-profile-copy .contact-actions,.contact-dark .contact-actions { grid-template-columns:repeat(2,minmax(0,1fr)); }}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+/* Compact featured selection and balanced mobile footer. */
+.puppies-feature .catalogue-grid { grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px; }
+.puppies-feature .catalogue-photo .media { aspect-ratio:1; }
+.puppies-feature .catalogue-copy { padding:14px 10px; }
+.puppies-feature .catalogue-name { display:block; }
+.puppies-feature .catalogue-name h3 { font-size:clamp(24px,5vw,34px);overflow-wrap:anywhere; }
+.puppies-feature .catalogue-name>span { display:block;margin-top:6px; }
+.puppies-feature .catalogue-status { left:7px;top:7px;padding:5px 7px;font-size:9px; }
+.puppies-feature .catalogue-copy .eyebrow { font-size:9px;letter-spacing:.8px; }
+.puppies-feature .catalogue-traits { display:none; }
+.puppies-feature .catalogue-link { font-size:11px;gap:4px;margin-top:12px; }
+.puppies-feature .catalogue-link .line-icon { width:18px;height:18px; }
+.footer-navigation .footer-social { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:26px; }
+.footer-navigation .footer-social a { display:flex;align-items:center;gap:10px;min-width:0;padding:16px 12px;border:1px solid var(--line);border-radius:16px;font-size:11px; }
+.footer-social a>span { min-width:0;overflow-wrap:anywhere;line-height:1.6; }
+.footer-social small { display:block;font-size:10px;color:var(--muted);margin-bottom:3px; }
+.footer-social .line-icon { flex-shrink:0;width:21px;height:21px; }
+.footer-bottom .ddo-credit { display:flex;flex-wrap:wrap;justify-content:center;gap:8px;text-decoration:none; }
+.ddo-credit strong { font:500 13px var(--sans);letter-spacing:.4px; }
+.ddo-credit .line-icon { width:16px;height:16px; }
+@media(max-width:699px){
+.footer-top { display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;justify-items:start;text-align:left;gap:20px; }
+.footer-top>p { margin:0;max-width:180px; }
+.footer-top-link { justify-self:end;white-space:nowrap;gap:10px; }
+.footer-brand { display:flex;justify-content:center; }
+.footer-navigation>nav:not(.footer-social) { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;text-align:center; }
+.footer-navigation>nav:not(.footer-social)>a { padding:12px 4px; }
+.footer-bottom { display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px; }
+.footer-bottom .ddo-credit>span { flex-basis:100%; }
+}
+@media(min-width:1000px){.puppies-feature .catalogue-grid { grid-template-columns:repeat(4,minmax(0,1fr));gap:22px; }.footer-navigation .footer-social { grid-template-columns:repeat(4,minmax(0,1fr)); }.puppies-feature .catalogue-copy { padding:20px 16px; }}
+@media(max-width:699px){.footer-navigation>nav:not(.footer-social)>a { justify-content:center; }}

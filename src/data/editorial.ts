@@ -47,8 +47,8 @@ export const editorial = {
 };
 // Illustrative atmosphere images; never health records or evidence.
 export const standardMedia: MediaAsset[] = [
-  { desktopSrc: "/media/examples/maltese.webp", alt: "Köpek portresi — sağlık kaydı olmayan temsili görsel", width: 800, height: 1000, isExample: true, aspectRatio: "4 / 5" },
-  { desktopSrc: "/media/examples/interior.webp", alt: "Dinlenme alanı — temsili yapay zekâ görseli", width: 800, height: 1000, isExample: true, caption: "Günlük yaşamın küçük ayrıntıları", aspectRatio: "4 / 5" },
-  { desktopSrc: "/media/examples/bichon.webp", alt: "Köpek portresi — temsili yapay zekâ görseli", width: 800, height: 1000, isExample: true, caption: "Her dostun ayrı bir karakteri", aspectRatio: "4 / 5" },
-  { desktopSrc: "/media/examples/companions.webp", alt: "Birlikte duran iki yavru — temsili görsel", width: 1200, height: 800, isExample: true, aspectRatio: "4 / 5" },
+{desktopSrc:"/media/editorial/care.webp",alt:"Düzenli bakım için hazırlanmış araçlar",aspectRatio:"4 / 3"},
+{desktopSrc:"/media/editorial/home.webp",alt:"Yeni bir dost için hazırlanan yaşam alanı",aspectRatio:"4 / 3"},
+{desktopSrc:"/media/examples/campaign-mobile.webp",alt:"Dinlenen küçük bir dost",aspectRatio:"4 / 3"},
+{desktopSrc:"/media/editorial/story.webp",alt:"Bir yavruyla sakin bir tanışma",aspectRatio:"4 / 3"}
 ];

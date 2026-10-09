@@ -1,3 +1,4 @@
+import { Icon } from "@/components/ui/Icon";
 import type { Proof } from "@/types/content";
 import { Media } from "./Media";
 export function Proofs({ items }: { items: Proof[] }) {
@@ -18,7 +19,7 @@ export function Proofs({ items }: { items: Proof[] }) {
               rel="noopener noreferrer"
             >
               {p.title}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true"><Icon className="arrow-diagonal"/></span>
             </a>
           )}
         </article>

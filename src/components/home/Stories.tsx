@@ -1,4 +1,4 @@
-import { DemoPeople, DemoStories } from "@/components/ui/DemoContent";
+import { Icon } from "@/components/ui/Icon";
 import { verifiedAwards } from "@/data/awards";
 import { publicTestimonials } from "@/data/testimonials";
 import { verifiedTeam } from "@/data/team";
@@ -33,7 +33,7 @@ export function AwardArchive() {
                   rel="noopener noreferrer"
                 >
                   <span>{site.ui.records}</span>
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true"><Icon className="arrow-diagonal"/></span>
                 </a>
               )}
             </div>
@@ -62,7 +62,7 @@ export function AwardFeature() {
   );
 }
 export function FamilyStories() {
-  if (!publicTestimonials.length) return <DemoStories />;
+  if (!publicTestimonials.length) return null;
   return (
     <section className="family-stories section shell">
       <header>
@@ -100,7 +100,7 @@ export function FamilyStories() {
   );
 }
 export function People() {
-  if (!verifiedTeam.length) return <DemoPeople />;
+  if (!verifiedTeam.length) return null;
   return (
     <div className="team-list">
       {verifiedTeam.map((t) => (

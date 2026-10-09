@@ -1,3 +1,4 @@
+import { Icon } from "@/components/ui/Icon";
 import Link from "next/link";
 import { site } from "@/data/site";
 import { editorial } from "@/data/editorial";
@@ -13,7 +14,7 @@ export function TextLink({
   return (
     <Link className={"text-link " + className} href={href}>
       <span>{children}</span>
-      <span aria-hidden="true">↗</span>
+      <span aria-hidden="true"><Icon className="arrow-diagonal"/></span>
     </Link>
   );
 }
@@ -50,7 +51,7 @@ export function ContactInvitation() {
           <Link className="invitation-link" href="/iletisim/">
             <span>{site.cta.action}</span>
             <span className="invitation-arrow" aria-hidden="true">
-              ↗
+              <Icon className="arrow-diagonal"/>
             </span>
           </Link>
         </div>

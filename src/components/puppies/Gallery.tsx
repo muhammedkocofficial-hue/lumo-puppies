@@ -1,4 +1,6 @@
 "use client";
+import { Icon } from "@/components/ui/Icon";
+
 import { useRef, useState } from "react";
 import { Media } from "@/components/ui/Media";
 import type { MediaAsset } from "@/types/content";
@@ -43,7 +45,7 @@ export function Gallery({ images }: { images: MediaAsset[] }) {
             disabled={active === 0}
             aria-label={site.ui.previous}
           >
-            ←
+            <Icon className="arrow-left"/>
           </button>
           <span aria-live="polite">
             {site.ui.photo} {active + 1} / {images.length}
@@ -53,7 +55,7 @@ export function Gallery({ images }: { images: MediaAsset[] }) {
             disabled={active === images.length - 1}
             aria-label={site.ui.next}
           >
-            →
+            <Icon/>
           </button>
         </div>
       )}
